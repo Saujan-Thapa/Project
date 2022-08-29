@@ -148,3 +148,31 @@ class Program
     }
 }
 */
+class Pattern
+{
+    public static void Main()
+    {
+        int[,] arr = new int[6, 6];
+        for(int i = 1; i < 6; i++)
+        {
+            for (int k = 10; k > i; k--)
+            {
+                Console.Write(" ");
+            }
+            for(int j = 0; j < i; j++)
+            {
+                if(j == 0 || i == j)
+                {
+                    arr[i, j] = 1;
+                }
+                else
+                {
+                    arr[i, j] = arr[i - 1, j-1] + arr[i - 1, j];
+                }
+                Console.Write(arr[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
+        Console.ReadLine();
+    }
+}
