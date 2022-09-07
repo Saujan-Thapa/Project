@@ -147,32 +147,59 @@ class Program
         myJeep.vehiclemodel();
     }
 }
-*/
+
 class Pattern
 {
     public static void Main()
     {
         int[,] arr = new int[6, 6];
-        for(int i = 1; i < 6; i++)
+
+        for (int i = 1; i < 6; i++)
         {
-            for (int k = 10; k > i; k--)
+
+            for (int k = 5; k > i; k--)
             {
                 Console.Write(" ");
             }
             for(int j = 0; j < i; j++)
             {
-                if(j == 0 || i == j)
+                if (j == 0 || i == 0)
                 {
                     arr[i, j] = 1;
                 }
                 else
                 {
-                    arr[i, j] = arr[i - 1, j-1] + arr[i - 1, j];
+                    arr[i, j] = arr[i - 1, j - 1] + arr[i - 1, j];
                 }
                 Console.Write(arr[i, j] + " ");
             }
             Console.WriteLine();
         }
         Console.ReadLine();
+    }
+}*/
+namespace PascalTriangleDemo
+{
+    class Example
+    {
+        public static void Main()
+        {
+            int rows = 5, val = 1, blank, i, j;
+            Console.WriteLine("Pascal's triangle");
+            for (i = 0; i < rows; i++)
+            {
+                for (blank = 1; blank <= rows - i; blank++)
+                    Console.Write(" ");
+                for (j = 0; j <= i; j++)
+                {
+                    if (j == 0 || i == 0)
+                        val = 1;
+                    else
+                        val = val * (i - j + 1) / j;
+                    Console.Write(val + " ");
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }
